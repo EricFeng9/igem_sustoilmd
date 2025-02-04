@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge_ScreenHandler;
+import sustech.sustoilmd.gui.Autoclave_Screen;
 import sustech.sustoilmd.gui.Bio_Fridge_Screen;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge_ScreenHandler;
 
@@ -18,6 +19,10 @@ public class SustoilMDClient implements ClientModInitializer {
 		ScreenRegistry.register(
 				ModScreenHandlers.BIO_FRIDGE_SCREEN_HANDLER,
                 Bio_Fridge_Screen::new
+		);
+		ScreenRegistry.register(
+				ModScreenHandlers.AUTOCLAVE_SCREEN_HANDLER,
+                Autoclave_Screen::new
 		);
 
 		// 注册油流体渲染

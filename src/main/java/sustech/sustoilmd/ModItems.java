@@ -43,6 +43,12 @@ public class ModItems {
             new Item(new Item.Settings()),
             MEDIUM_KEY
     );
+    //medium 培养基(已消毒)
+    public static final RegistryKey<Item> MEDIUM_STERILIZED_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SustoilMD.MOD_ID, "medium_sterilized"));
+    public static final Item MEDIUM_STERILIZED = register(
+            new Item(new Item.Settings()),
+            MEDIUM_STERILIZED_KEY
+    );
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ModItemGroups.CUSTOM_ITEM_GROUP_KEY).register((itemGroup) -> {
@@ -50,6 +56,7 @@ public class ModItems {
             itemGroup.add(EXPLANATORY_LIQUID_BP);
             itemGroup.add(EXPLANATORY_LIQUID_P);
             itemGroup.add(MEDIUM);
+            itemGroup.add(MEDIUM_STERILIZED);
 
         });
     }

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sustoilmd:block/autoclave" },
+    "facing=south": { "model": "sustoilmd:block/autoclave", "y": 180 },
+    "facing=east": { "model": "sustoilmd:block/autoclave", "y": 90 },
+    "facing=west": { "model": "sustoilmd:block/autoclave", "y": 270 }
+  }
+}

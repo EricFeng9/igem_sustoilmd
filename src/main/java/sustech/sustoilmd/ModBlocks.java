@@ -11,10 +11,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import sustech.sustoilmd.complexBlocks.Agar_Block;
-import sustech.sustoilmd.complexBlocks.Agar_Block_Yellow;
-import sustech.sustoilmd.complexBlocks.Bio_Fridge;
-import sustech.sustoilmd.complexBlocks.OccupiedBlock;
+import sustech.sustoilmd.complexBlocks.*;
 
 public class ModBlocks {
     public static Block register(Block block, String name, boolean shouldRegisterItem) {
@@ -36,6 +33,7 @@ public class ModBlocks {
             itemGroup.add(ModBlocks.POLLUTION_BLOCK);
             itemGroup.add(ModBlocks.Agar_Block);
             itemGroup.add(ModBlocks.Agar_Block_Yellow);
+            itemGroup.add(ModBlocks.Autoclave);
         });
 
 
@@ -44,6 +42,11 @@ public class ModBlocks {
     public static final Block Bio_Fridge = register(
             new Bio_Fridge(AbstractBlock.Settings.copy(Blocks.STONE)),
             "bio_fridge",
+            true
+            );
+    public static final Block Autoclave = register(
+            new Autoclave(AbstractBlock.Settings.copy(Blocks.STONE)),
+            "autoclave",
             true
             );
 

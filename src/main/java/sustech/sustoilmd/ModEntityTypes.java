@@ -4,6 +4,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import sustech.sustoilmd.complexBlocks.Autoclave_Entity;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge_Entity;
 
 public class ModEntityTypes {
@@ -16,6 +17,12 @@ public class ModEntityTypes {
             // 对于 1.21.2 及以上的版本，
             // 请将 `BlockEntityType.Builder` 替换为 `FabricBlockEntityTypeBuilder`。
             BlockEntityType.Builder.create(Bio_Fridge_Entity::new, ModBlocks.Bio_Fridge).build()
+    );
+    public static final BlockEntityType<Autoclave_Entity> Autoclave = register(
+            "auto_clave",
+            // 对于 1.21.2 及以上的版本，
+            // 请将 `BlockEntityType.Builder` 替换为 `FabricBlockEntityTypeBuilder`。
+            BlockEntityType.Builder.create(Autoclave_Entity::new, ModBlocks.Autoclave).build()
     );
 
 

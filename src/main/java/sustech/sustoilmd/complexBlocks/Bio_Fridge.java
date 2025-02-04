@@ -7,6 +7,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resource.featuretoggle.FeatureSet;
@@ -33,7 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bio_Fridge extends BlockWithEntity {
-
     // 定义水平 FACING 属性
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 

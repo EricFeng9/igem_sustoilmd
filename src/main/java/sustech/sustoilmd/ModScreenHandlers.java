@@ -8,6 +8,8 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import sustech.sustoilmd.complexBlocks.Autoclave_Entity;
+import sustech.sustoilmd.complexBlocks.Autoclave_ScreenHandler;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge_Entity;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge_ScreenHandler;
 
@@ -34,6 +36,17 @@ public class ModScreenHandlers {
                         return new Bio_Fridge_ScreenHandler(syncId, playerInventory, new SimpleInventory(9));
                     }
             );
+    public static final ScreenHandlerType<Autoclave_ScreenHandler> AUTOCLAVE_SCREEN_HANDLER =
+            ScreenHandlerRegistry.registerExtended(
+                    new Identifier(SustoilMD.MOD_ID, "autoclave"),
+                    (syncId, playerInventory, buf) ->
+                            new Autoclave_ScreenHandler(
+                                    syncId,
+                                    playerInventory,
+                                    (Autoclave_Entity) playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos())
+                            )
+            );
+
     public static void registerAll() {
     }
 }
