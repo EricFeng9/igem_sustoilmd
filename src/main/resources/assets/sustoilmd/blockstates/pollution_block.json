@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "sustoilmd:block/pollution_block" }
+  }
+}

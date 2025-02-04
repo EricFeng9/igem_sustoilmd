@@ -11,6 +11,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import sustech.sustoilmd.complexBlocks.Agar_Block;
+import sustech.sustoilmd.complexBlocks.Agar_Block_Yellow;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge;
 import sustech.sustoilmd.complexBlocks.OccupiedBlock;
 
@@ -30,26 +32,40 @@ public class ModBlocks {
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ModItemGroups.CUSTOM_ITEM_GROUP_KEY).register((itemGroup) -> {
-            itemGroup.add(ModBlocks.CONDENSED_DIRT.asItem());
             itemGroup.add(ModBlocks.Bio_Fridge);
-
+            itemGroup.add(ModBlocks.POLLUTION_BLOCK);
+            itemGroup.add(ModBlocks.Agar_Block);
+            itemGroup.add(ModBlocks.Agar_Block_Yellow);
         });
+
+
     }
 
-    public static final Block CONDENSED_DIRT = register(
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE)),
-            "condensed_dirt",
-            true
-    );
     public static final Block Bio_Fridge = register(
             new Bio_Fridge(AbstractBlock.Settings.copy(Blocks.STONE)),
             "bio_fridge",
             true
             );
+
+    public static final Block Agar_Block = register(
+            new Agar_Block(AbstractBlock.Settings.copy(Blocks.SLIME_BLOCK).sounds(BlockSoundGroup.SLIME)),
+            "agar_block",
+            true
+    );
+    public static final Block Agar_Block_Yellow = register(
+            new Agar_Block_Yellow(AbstractBlock.Settings.copy(Blocks.SLIME_BLOCK).sounds(BlockSoundGroup.SLIME)),
+            "agar_block_yellow",
+            true
+    );
+
     public static final Block OCCUPIED_BLOCK = register(
             new OccupiedBlock(AbstractBlock.Settings.copy(Blocks.AIR)),
             "occupied_block",
             false
             );
 
+    public static final Block POLLUTION_BLOCK = register(
+            new Block(AbstractBlock.Settings.create().requiresTool().strength(3.0f, 3.0f).sounds(BlockSoundGroup.ROOTED_DIRT)),
+            "pollution_block",
+            true);
 }

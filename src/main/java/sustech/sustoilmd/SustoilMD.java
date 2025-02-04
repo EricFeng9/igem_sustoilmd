@@ -3,10 +3,6 @@ package sustech.sustoilmd;
 import net.fabricmc.api.ModInitializer;
 
 
-import net.minecraft.block.Block;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge;
@@ -29,7 +25,9 @@ public class SustoilMD implements ModInitializer {
 		ModItemGroups.initialize();
 		Bio_Fridge.initialize();
 		ModEntityTypes.initialize();
+		ModFluids.initialize();
 		ModScreenHandlers.registerAll();
+
 		LOGGER.info("Hello Fabric world!");
 
 	}

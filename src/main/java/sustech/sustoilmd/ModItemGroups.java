@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 public class ModItemGroups {
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(SustoilMD.MOD_ID, "item_group"));
     public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModBlocks.CONDENSED_DIRT))
+            .icon(() -> new ItemStack(ModBlocks.Bio_Fridge))
             .displayName(Text.translatable("itemGroup.sustoilmd"))
             .build();
 

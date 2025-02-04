@@ -2,9 +2,13 @@
   "item.sustoilmd.explanatory_liquid_b":"Explanatory Liquid B",
   "item.sustoilmd.explanatory_liquid_bp":"Explanatory Liquid B-P",
   "item.sustoilmd.explanatory_liquid_p":"Explanatory Liquid P",
+  "item.sustoilmd.oil_bucket":"Oil Bucket",
   "item.sustoilmd.medium":"Medium",
   "block.sustoilmd.condensed_dirt": "Condensed Dirt",
   "block.sustoilmd.bio_fridge": "Bio Fridge",
+  "block.sustoilmd.pollution_block": "Pollution block",
+  "block.sustoilmd.agar_block":"Agar Block",
+  "block.sustoilmd.agar_block_yellow":"Agar Block(Yellow)",
   "itemGroup.sustoilmd": "Sust-OilMD",
   "container.bio_fridge": "Bio Fridge"
 }
