@@ -5,6 +5,9 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import org.slf4j.Logger;
@@ -37,7 +40,42 @@ public class SustoilMD implements ModInitializer {
                     return ActionResult.SUCCESS;
                 }
             }
+            if (heldItem.getItem() == ModItems.EXPLANATORY_LIQUID_P) {
+                LOGGER.info("Player is holding EXPLANATORY_LIQUID_P");
+                BlockPos centerPos = hitResult.getBlockPos();
 
+                // 遍历 3×3×3 区域
+                for (int x = -1; x <= 1; x++) {
+                    for (int y = -1; y <= 1; y++) {
+                        for (int z = -1; z <= 1; z++) {
+                            BlockPos targetPos = centerPos.add(x, y, z);
+                            BlockState blockState = world.getBlockState(targetPos);
+
+                            // 检查是否是污染方块
+                            if (blockState.getBlock() == ModBlocks.POLLUTION_BLOCK) {
+                                LOGGER.info("Pollution block detected at position: " + targetPos);
+                                // 将污染方块替换为草地方块
+                                world.setBlockState(targetPos, Blocks.GRASS_BLOCK.getDefaultState());
+                                LOGGER.info("Block replaced at position: " + targetPos);
+
+                                // 添加粒子效果
+                                world.addParticle(ParticleTypes.HAPPY_VILLAGER, targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5, 1, 1, 1);
+
+                                // 播放音效
+                                world.playSound(player, targetPos, SoundEvents.BLOCK_GRASS_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                            }
+                        }
+                    }
+                }
+
+                // 消耗降解液BP（可选）
+                if (!player.isCreative()) {
+                    heldItem.decrement(1);
+                }
+
+                // 返回成功，阻止默认行为
+                return ActionResult.SUCCESS;
+            }
             return ActionResult.PASS;
         });
 
