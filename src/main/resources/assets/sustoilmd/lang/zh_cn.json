@@ -8,9 +8,11 @@
   "block.sustoilmd.bio_fridge": "冰箱",
   "block.sustoilmd.pollution_block": "污染方块",
   "block.sustoilmd.autoclave": "灭菌锅",
+  "block.sustoilmd.clean_table": "超净工作台",
   "block.sustoilmd.agar_block":"琼脂块",
   "block.sustoilmd.agar_block_yellow":"琼脂块(黄)",
   "itemGroup.sustoilmd": "Sust-OilMD石油降解者",
   "container.bio_fridge": "冰箱",
   "container.autoclave": "灭菌锅",
+  "container.clean_table": "超净工作台"
 }

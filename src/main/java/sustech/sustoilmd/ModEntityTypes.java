@@ -6,6 +6,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import sustech.sustoilmd.complexBlocks.Autoclave_Entity;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge_Entity;
+import sustech.sustoilmd.complexBlocks.CleanTable_Entity;
 
 public class ModEntityTypes {
     public static <T extends BlockEntityType<?>> T register(String path, T blockEntityType) {
@@ -23,6 +24,10 @@ public class ModEntityTypes {
             // 对于 1.21.2 及以上的版本，
             // 请将 `BlockEntityType.Builder` 替换为 `FabricBlockEntityTypeBuilder`。
             BlockEntityType.Builder.create(Autoclave_Entity::new, ModBlocks.Autoclave).build()
+    );
+    public static final BlockEntityType<CleanTable_Entity> CleanTable = register(
+            "clean_table",
+            BlockEntityType.Builder.create(CleanTable_Entity::new, ModBlocks.CleanTable).build()
     );
 
 

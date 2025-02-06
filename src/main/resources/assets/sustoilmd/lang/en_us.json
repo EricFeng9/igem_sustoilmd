@@ -8,9 +8,11 @@
   "block.sustoilmd.bio_fridge": "Bio Fridge",
   "block.sustoilmd.pollution_block": "Pollution block",
   "block.sustoilmd.autoclave": "Autoclave",
+  "block.sustoilmd.clean_table": "Clean Table",
   "block.sustoilmd.agar_block":"Agar Block",
   "block.sustoilmd.agar_block_yellow":"Agar Block(Yellow)",
   "itemGroup.sustoilmd": "Sust-OilMD",
   "container.bio_fridge": "Bio Fridge",
-  "container.autoclave": "Autoclave"
+  "container.autoclave": "Autoclave",
+  "container.clean_table": "Clean Table"
 }

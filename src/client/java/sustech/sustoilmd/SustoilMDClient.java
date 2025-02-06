@@ -11,6 +11,7 @@ import sustech.sustoilmd.complexBlocks.Bio_Fridge_ScreenHandler;
 import sustech.sustoilmd.gui.Autoclave_Screen;
 import sustech.sustoilmd.gui.Bio_Fridge_Screen;
 import sustech.sustoilmd.complexBlocks.Bio_Fridge_ScreenHandler;
+import sustech.sustoilmd.gui.CleanTable_Screen;
 
 public class SustoilMDClient implements ClientModInitializer {
 	@Override
@@ -23,6 +24,11 @@ public class SustoilMDClient implements ClientModInitializer {
 		ScreenRegistry.register(
 				ModScreenHandlers.AUTOCLAVE_SCREEN_HANDLER,
                 Autoclave_Screen::new
+		);
+
+		ScreenRegistry.register(
+				ModScreenHandlers.CLEAN_TABLE_SCREEN_HANDLER,
+                CleanTable_Screen::new
 		);
 
 		// 注册油流体渲染

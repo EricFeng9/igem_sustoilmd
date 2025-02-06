@@ -34,6 +34,7 @@ public class ModBlocks {
             itemGroup.add(ModBlocks.Agar_Block);
             itemGroup.add(ModBlocks.Agar_Block_Yellow);
             itemGroup.add(ModBlocks.Autoclave);
+            itemGroup.add(ModBlocks.CleanTable);
         });
 
 
@@ -47,6 +48,11 @@ public class ModBlocks {
     public static final Block Autoclave = register(
             new Autoclave(AbstractBlock.Settings.copy(Blocks.STONE)),
             "autoclave",
+            true
+            );
+    public static final Block CleanTable = register(
+            new CleanTable(AbstractBlock.Settings.copy(Blocks.STONE)),
+            "clean_table",
             true
             );
 
